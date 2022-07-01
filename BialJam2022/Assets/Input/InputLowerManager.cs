@@ -22,8 +22,8 @@ public class InputLowerManager : MonoBehaviour
         for(int i=0;i<_playerMaps.Length;i++){
             _playerMaps[i] = new PlayerInputBaseMap();
             _playerMaps[i].Disable();
-            _playerMaps[i].Movement.Disable();
-            _playerMaps[i].Misc.Disable();
+            _playerMaps[i].Movement.Enable();
+            _playerMaps[i].Misc.Enable();
             _playerMaps[i].devices = null;
         }
 
