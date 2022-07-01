@@ -61,7 +61,7 @@ public partial class @PlayerInputBaseMap : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""2D Vector"",
                     ""id"": ""bfa16acc-6ba7-4de5-95d0-637667dcc3f5"",
-                    ""path"": ""2DVector"",
+                    ""path"": ""2DVector(mode=2)"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
