@@ -27703,7 +27703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rollForce: 250
   jumpForce: 12.5
-  swimSpeed: 840
+  swimSpeed: 280
   _groundCheckMask:
     serializedVersion: 2
     m_Bits: 8
@@ -33047,7 +33047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rollForce: 250
   jumpForce: 12.5
-  swimSpeed: 840
+  swimSpeed: 280
   _groundCheckMask:
     serializedVersion: 2
     m_Bits: 8
