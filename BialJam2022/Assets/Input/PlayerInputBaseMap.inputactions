@@ -1,0 +1,94 @@
+{
+    "name": "PlayerInputBaseMap",
+    "maps": [
+        {
+            "name": "Movement",
+            "id": "7e84c119-1caa-4e37-b369-696ff7068249",
+            "actions": [
+                {
+                    "name": "Roll",
+                    "type": "Value",
+                    "id": "6a3383ed-e595-4846-b20d-790fe97ee21b",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "ApplyForce",
+                    "type": "Button",
+                    "id": "cabcc551-1ba9-41d8-b3ee-cf3c2df02826",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "70f9e981-a036-4fc4-becb-8e384a1c3b38",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePadXbox",
+                    "action": "Roll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d5483fd4-e95b-4aec-b9e9-86fab33ce493",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePadXbox",
+                    "action": "ApplyForce",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Misc",
+            "id": "cd5905d8-e543-4f8e-8a1e-de6eb7d0c12c",
+            "actions": [
+                {
+                    "name": "Menu_Pause",
+                    "type": "Button",
+                    "id": "62ee8b22-04c8-4c7c-881c-3a298b48693e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "35c4632e-2b3c-4615-a003-4c1ad354656a",
+                    "path": "<XInputController>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePadXbox",
+                    "action": "Menu_Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "GamePadXbox",
+            "bindingGroup": "GamePadXbox",
+            "devices": [
+                {
+                    "devicePath": "<XInputController>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
