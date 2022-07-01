@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (!_isGrounded || _scaner.CheckIsInWater()) return;
         //Jump
-        if(_gather.keys.movement.y != 0 && _gather.keys.movement.y>0.5f)
+        if(_gather.keys.movement.y != 0 && _gather.keys.movement.y>0.36f)
         {
             _rb.AddForce(_gather.keys.movement * jumpForce, ForceMode2D.Impulse);
         }
@@ -72,13 +72,13 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //ground chek
-        _isGrounded = Physics2D.BoxCast(transform.position, Vector2.one * 0.5f, 0, Vector2.down, 0.3f, _groundCheckMask);
+        _isGrounded = Physics2D.BoxCast(transform.position, Vector2.one * 0.5f, 0, Vector2.down, 0.4f, _groundCheckMask);
         _canStomp = !_isGrounded;
     }
 
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawCube(transform.position+Vector3.down*0.3f,Vector3.one*0.5f);
+        Gizmos.DrawCube(transform.position+Vector3.down*0.4f,Vector3.one*0.5f);
     }
 }
