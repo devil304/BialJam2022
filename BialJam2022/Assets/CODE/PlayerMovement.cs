@@ -26,15 +26,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (!_isGrounded || _scaner.CheckIsInWater()) return;
+        
         //Stomp
-        if(_canStomp && _gather.keys.movement.y < -0.5f)
+        if(_canStomp && _gather.keys.movement.y < -0.5f && !_isGrounded)
         {
             _rb.AddForce(Vector2.down * jumpForce, ForceMode2D.Impulse);
             _canStomp = false;
         }
+        if (!_isGrounded || _scaner.CheckIsInWater()) return;
         //Jump
-        if(_gather.keys.movement.y != 0 && _gather.keys.movement.y<0.5f)
+        if(_gather.keys.movement.y != 0 && _gather.keys.movement.y>0.5f)
         {
             _rb.AddForce(_gather.keys.movement * jumpForce, ForceMode2D.Impulse);
         }
@@ -66,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
         //roll
         if (_gather.keys.movement.sqrMagnitude > 0.01f)
         {
-            Debug.Log(_gather.keys.movement * rollForce);
+            //Debug.Log(_gather.keys.movement * rollForce);
             _rb.AddForceAtPosition(_gather.keys.movement * rollForce * Time.deltaTime, transform.position + (Vector3)(Vector2.up * 0.1f));
         }
 

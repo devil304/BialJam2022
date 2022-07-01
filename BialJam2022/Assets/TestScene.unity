@@ -183,8 +183,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157280372}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.51, y: -0.89, z: 0}
-  m_LocalScale: {x: 1, y: 5.81, z: 1}
+  m_LocalPosition: {x: -9.51, y: 8.95, z: 0}
+  m_LocalScale: {x: 1, y: 25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 114830470}
@@ -324,11 +324,11 @@ MonoBehaviour:
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0.24
+  m_DeadZoneWidth: 0.36
   m_DeadZoneHeight: 1
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 0.761
+  m_SoftZoneWidth: 0.85
   m_SoftZoneHeight: 2
   m_BiasX: 0
   m_BiasY: 0
@@ -382,8 +382,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595977743}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.62, y: -0.83, z: 0}
-  m_LocalScale: {x: 1, y: 6.16, z: 1}
+  m_LocalPosition: {x: 8.62, y: 9.01, z: 0}
+  m_LocalScale: {x: 1, y: 25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 114830470}
@@ -521,7 +521,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1.25
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 155cd5e6a1a48c34cb0420165f07c2dd, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -538,13 +538,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83599f3d97c749c48a42ae70e33cd2cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rollForce: 200
+  rollForce: 250
   jumpForce: 12.5
   swimSpeed: 10
   _groundCheckMask:
     serializedVersion: 2
     m_Bits: 8
-  scaner: {fileID: 0}
 --- !u!114 &947330067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -685,7 +684,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.0123153, y: 1}
+    m_SensorSize: {x: 0.80765176, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -736,8 +735,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043706759}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.51, y: -0.89, z: 0}
-  m_LocalScale: {x: 1, y: 5.81, z: 1}
+  m_LocalPosition: {x: -9.51, y: 8.880004, z: 0}
+  m_LocalScale: {x: 1, y: 25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1186462848}
@@ -1456,11 +1455,11 @@ MonoBehaviour:
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0.24
+  m_DeadZoneWidth: 0.36
   m_DeadZoneHeight: 1
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 0.761
+  m_SoftZoneWidth: 0.85
   m_SoftZoneHeight: 2
   m_BiasX: 0
   m_BiasY: 0
@@ -1534,7 +1533,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.0123153, y: 1}
+    m_SensorSize: {x: 0.80765176, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1585,8 +1584,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1835663567}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.62, y: -0.83, z: 0}
-  m_LocalScale: {x: 1, y: 6.16, z: 1}
+  m_LocalPosition: {x: 8.62, y: 8.94, z: 0}
+  m_LocalScale: {x: 1, y: 25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1186462848}
@@ -1739,7 +1738,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1.25
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 155cd5e6a1a48c34cb0420165f07c2dd, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -1756,13 +1755,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83599f3d97c749c48a42ae70e33cd2cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rollForce: 200
+  rollForce: 250
   jumpForce: 12.5
   swimSpeed: 10
   _groundCheckMask:
     serializedVersion: 2
     m_Bits: 8
-  scaner: {fileID: 0}
 --- !u!114 &2128976862
 MonoBehaviour:
   m_ObjectHideFlags: 0
