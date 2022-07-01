@@ -8,11 +8,11 @@ public class EnviromentScaner : MonoBehaviour
 
     private bool _inAir, _inWater;
 
-    private void Update()
-    {
-        _inWater = Physics2D.BoxCast(transform.position, Vector2.one * 0.5f, 0, Vector2.down, 0.3f, waterMask);
-        _inAir = !_inWater;
-    }
+//    private void Update()
+  //  {
+    //    _inWater = Physics2D.BoxCast(transform.position, Vector2.one * 0.5f, 0, Vector2.down, 0.3f, waterMask);
+    //  _inAir = !_inWater;
+    //}
 
     public bool CheckIsInWater()
     {
@@ -22,6 +22,19 @@ public class EnviromentScaner : MonoBehaviour
     public bool CheckIsInAir()
     {
         return _inAir;
+    }
+
+    private void OnWaterStay()
+    {
+        Debug.Log("In water");
+        _inWater = true;
+        _inAir = !_inWater;
+    }
+
+    private void OnWaterExit()
+    {
+        _inWater = false;
+        _inAir = !_inWater;
     }
 
 }
