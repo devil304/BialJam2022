@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Water : MonoBehaviour
 {
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            collision.BroadcastMessage("OnWaterStay");
+            collision.gameObject.SendMessage("OnWaterStay");
         }
     }
 
@@ -16,7 +16,7 @@ public class Water : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.BroadcastMessage("OnWaterExit");
+            collision.gameObject.SendMessage("OnWaterExit");
         }
     }
 }

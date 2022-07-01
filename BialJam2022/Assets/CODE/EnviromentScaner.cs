@@ -6,7 +6,7 @@ public class EnviromentScaner : MonoBehaviour
 {
     [SerializeField] private LayerMask waterMask;
 
-    private bool _inAir, _inWater;
+    private bool _inAir=true, _inWater;
 
 //    private void Update()
   //  {
@@ -33,6 +33,7 @@ public class EnviromentScaner : MonoBehaviour
 
     private void OnWaterExit()
     {
+        Debug.Log("Out water");
         _inWater = false;
         _inAir = !_inWater;
     }

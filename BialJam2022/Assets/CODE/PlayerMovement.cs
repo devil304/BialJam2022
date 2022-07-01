@@ -46,17 +46,24 @@ public class PlayerMovement : MonoBehaviour
         
         PerformInAirAction();
 
-        PerformInWaterAction();
+        //PerformInWaterAction();
 
+    }
+
+    void FixedUpdate()
+    {
+        PerformInWaterAction();
     }
 
     private void PerformInWaterAction()
     {
         if (_scaner.CheckIsInAir()) return;
+        _rb.gravityScale = 0.43f;
         //free Move
         if (_gather.keys.movement.sqrMagnitude > 0.01f)
-        {
-            _rb.AddForce(_gather.keys.movement * swimSpeed * Time.deltaTime);
+        {   
+            _rb.velocity = (_gather.keys.movement * swimSpeed * Time.fixedDeltaTime);
+            //_rb.AddForce(_gather.keys.movement * swimSpeed * Time.deltaTime);
         }
 
     }
@@ -64,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
     private void PerformInAirAction()
     {
         if (_scaner.CheckIsInWater()) return;
+        _rb.gravityScale = 1f;
         //roll
         if (_gather.keys.movement.sqrMagnitude > 0.01f)
         {

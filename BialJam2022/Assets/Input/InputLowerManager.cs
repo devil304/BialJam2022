@@ -62,7 +62,7 @@ public class InputLowerManager : MonoBehaviour
 
     private void DeviceStateChanged(InputDevice device, InputDeviceChange change)
     {
-        //if(!device.displayName.ToLower().Contains("xbox")) return;
+        if(!device.displayName.ToLower().Contains("xbox")) return;
         if(_assignMapChanges.Contains(change) && !_connectedDevices.Any(kvp=>kvp.Key.deviceId == device.deviceId)){
             int i =0;
             for(i=0;i<_playerMaps.Length;i++){
