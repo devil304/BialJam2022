@@ -8,6 +8,7 @@ using UnityEngine.InputSystem.Utilities;
 
 public class InputLowerManager : MonoBehaviour
 {
+    [SerializeField] InputGather[] _playersInputs;
     [SerializeField] bool _enableDebug = false;
 
     PlayerInputBaseMap[] _playerMaps;
@@ -26,6 +27,10 @@ public class InputLowerManager : MonoBehaviour
             _playerMaps[i].devices = null;
         }
 
+        for(int i=0;i<_playersInputs.Length;i++){
+            _playersInputs[i].RegisterMap(_playerMaps[i]);
+        }
+        
         //Test only
         #if UNITY_EDITOR
         _playerMaps[0].Movement.Roll.performed += Movement1Performed;

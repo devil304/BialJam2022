@@ -1,28 +1,52 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InputGather : MonoBehaviour
 {
 
-    private InputKey keys;
+    public InputKey keys;
 
-    public InputKey InputKey => keys;
+    PlayerInputBaseMap _myMap;
 
-    private void Start()
+    private void Awake()
     {
         keys = new InputKey();
     }
 
     void Update()
     {
-        keys.movement = new Vector2( Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        keys.jumpButton = Input.GetKeyDown(KeyCode.Space);
+        
+    }
+
+    public void RegisterMap(PlayerInputBaseMap map){
+        _myMap = map;
+        _myMap.Movement.Roll.performed += RollPerformed;
+        _myMap.Movement.Roll.canceled += RollEnded;
+        _myMap.Movement.ApplyForce.started += JumpStarted;
+    }
+
+    private void JumpStarted(InputAction.CallbackContext obj)
+    {
+        if(obj.ReadValueAsButton())
+            keys.jump?.Invoke();
+    }
+
+    private void RollEnded(InputAction.CallbackContext obj)
+    {
+        keys.movement = Vector2.zero;
+    }
+
+    private void RollPerformed(InputAction.CallbackContext obj)
+    {
+        keys.movement = obj.ReadValue<Vector2>();
     }
 }
 
 public struct InputKey
 {
     public Vector2 movement;
-    public bool jumpButton;
+    public Action jump;
 }
