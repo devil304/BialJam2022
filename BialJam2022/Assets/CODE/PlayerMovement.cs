@@ -28,11 +28,11 @@ public class PlayerMovement : MonoBehaviour
     {
         
         //Stomp
-        if(_canStomp && _gather.keys.movement.y < -0.5f && !_isGrounded)
-        {
-            _rb.AddForce(Vector2.down * jumpForce, ForceMode2D.Impulse);
-            _canStomp = false;
-        }
+        // if(_canStomp && _gather.keys.movement.y < -0.5f && !_isGrounded)
+        // {
+        //     _rb.AddForce(Vector2.down * jumpForce, ForceMode2D.Impulse);
+        //     _canStomp = false;
+        // }
         if (!_isGrounded || _scaner.CheckIsInWater()) return;
         //Jump
         if(_gather.keys.movement.y != 0 && _gather.keys.movement.y>0.36f)
