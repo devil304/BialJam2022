@@ -7,10 +7,9 @@ public class PointDisplay : MonoBehaviour
     [SerializeField] private bool isSecondPlayer;
 
     [SerializeField] private TMPro.TextMeshProUGUI text;
-    [SerializeField] private SecondRoundController controller;
 
     void Update()
     {
-        text.text = isSecondPlayer? controller.Player2.ducks.ToString() : controller.Player1.ducks.ToString();
+        text.text = isSecondPlayer? Points.instance.player2Point.ToString() : Points.instance.player1Point.ToString();
     }
 }

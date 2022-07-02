@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class SecondRoundController : MonoBehaviour
 {
+    public static SecondRoundController instance;
+
+    [SerializeField] private Spawner spawner;
+
     [SerializeField] private PlayerInfo player1;
     [SerializeField] private PlayerInfo player2;
 
@@ -16,23 +20,27 @@ public class SecondRoundController : MonoBehaviour
 
     [SerializeField] private float winerCollisionRadius;
     [SerializeField] private float loserCollisionRadius;
-    
 
     public PlayerInfo Player1 => player1;
     public PlayerInfo Player2 => player2;
 
-    [ContextMenu("Point to Player 1")]
-    public void AddPointToPlayer1()
+    void Awake()
     {
-        player1.ducks++;
-        CheckWineLoser();
+        instance = this;
     }
 
-    [ContextMenu("Point to Player 2")]
-    public void AddPointToPlayer2()
+    public void AddPointToPlayer1(GameObject duck)
     {
-        player2.ducks++;
+        Points.instance.IncreasePlayer1Points();
         CheckWineLoser();
+        spawner.RemoveDuck(duck);
+    }
+
+    public void AddPointToPlayer2(GameObject duck)
+    {
+        Points.instance.IncreasePlayer1Points();
+        CheckWineLoser();
+        spawner.RemoveDuck(duck);
     }
 
     void Start()
@@ -42,8 +50,8 @@ public class SecondRoundController : MonoBehaviour
 
     private void CheckWineLoser()
     {
-        if(player1.ducks == player2.ducks) return;
-        if(player1.ducks > player2.ducks)
+        if(Points.instance.player2Point == Points.instance.player1Point) return;
+        if(Points.instance.player1Point > Points.instance.player2Point)
         {
             SetWiner(player1);
             SetLoser(player2);
@@ -53,6 +61,12 @@ public class SecondRoundController : MonoBehaviour
             SetWiner(player2);
             SetLoser(player1);
         }
+        if (Points.instance.player1Point >= 10 || Points.instance.player2Point >= 10) GameEnd();
+    }
+
+    private static void GameEnd()
+    {
+        Time.timeScale = 0;
     }
 
     private void SetLoser(PlayerInfo player)
@@ -73,7 +87,6 @@ public class SecondRoundController : MonoBehaviour
 [Serializable]
 public class PlayerInfo
 {
-    public int ducks;
     public SpriteRenderer sprite;
     public PlayerMovement movement;
     public CircleCollider2D collider;

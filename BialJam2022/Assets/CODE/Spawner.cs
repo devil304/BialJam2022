@@ -22,13 +22,28 @@ public class Spawner : MonoBehaviour
     {
         if(ducks.Count >= maxDuck) return;
 
-        GameObject newDuck = Instantiate(duckPrefab, Vector3.zero, Quaternion.identity);
+        GameObject newDuck = Instantiate(duckPrefab, GetRandomPoint(), Quaternion.identity);
 
         ducks.Add(newDuck);
     }
 
+    public void RemoveDuck(GameObject duckToRemove)
+    {
+        for (var i = 0; i < ducks.Count; i++)
+        {
+            if(ducks[i] == duckToRemove) 
+            {
+                ducks.RemoveAt(i);
+                return;
+            }
+        }
+    }
+
     [SerializeField] private Transform ULPoint;
     [SerializeField] private Transform DRPoint;
+
+    [SerializeField] private Transform player1;
+    [SerializeField] private Transform player2;
 
     public Vector2 GetRandomPoint()
     {
@@ -36,10 +51,15 @@ public class Spawner : MonoBehaviour
         
         for (var i = 0; i < ducks.Count; i++)
         {
-            //if()
+            if(Vector2.Distance(newRandomPoint, ducks[i].transform.position) < minimuDistance)
+            {
+                return GetRandomPoint();
+            }
         }
+        if(Vector2.Distance(newRandomPoint, player1.position) < minimuDistance) return GetRandomPoint();
+        if(Vector2.Distance(newRandomPoint, player2.position) < minimuDistance) return GetRandomPoint();
 
-        return Vector2.zero;
+        return newRandomPoint;
     }
 
 }
