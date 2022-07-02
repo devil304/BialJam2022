@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private bool isSecondPlayer;
+    public bool isSecondPlayer;
     [SerializeField] private float rollForce = 1f;
     [SerializeField] private float jumpForce = 100f;
     [SerializeField] private float swimSpeed = 10f;

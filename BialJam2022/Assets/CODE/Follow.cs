@@ -46,8 +46,8 @@ public class Follow : MonoBehaviour
         }
         if(mag>_maxMag)
             _maxMag = mag;
-        if(posHistory.Count>70)
-            posHistory.RemoveRange(0,posHistory.Count%70);
+        if(posHistory.Count>(6+(_chickens.Count+1)* 4))
+            posHistory.RemoveRange(0,posHistory.Count%(6+(_chickens.Count+1)* 4));
 
         if(posHistory.Count<(8+_chickens.Count*4)) return;
 
