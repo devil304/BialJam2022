@@ -38,7 +38,7 @@ public class SecondRoundController : MonoBehaviour
 
     public void AddPointToPlayer2(GameObject duck)
     {
-        Points.instance.IncreasePlayer1Points();
+        Points.instance.IncreasePlayer2Points();
         CheckWineLoser();
         spawner.RemoveDuck(duck);
     }
