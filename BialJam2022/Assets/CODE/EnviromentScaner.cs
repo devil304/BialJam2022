@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnviromentScaner : MonoBehaviour
 {
+    [SerializeField] private AnimationController anim;
     [SerializeField] private LayerMask waterMask;
 
     private bool _inAir=true, _inWater;
@@ -29,6 +30,7 @@ public class EnviromentScaner : MonoBehaviour
         Debug.Log("In water");
         _inWater = true;
         _inAir = !_inWater;
+        anim.SetWater(_inWater);
     }
 
     private void OnWaterExit()
@@ -36,6 +38,7 @@ public class EnviromentScaner : MonoBehaviour
         Debug.Log("Out water");
         _inWater = false;
         _inAir = !_inWater;
+        anim.SetWater(_inWater);
     }
 
 }

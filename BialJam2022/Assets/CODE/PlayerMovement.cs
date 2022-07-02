@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 100f;
     [SerializeField] private float swimSpeed = 10f;
     [SerializeField] LayerMask _groundCheckMask;
+    [SerializeField] private AnimationController anim;
 
     private EnviromentScaner _scaner;
     private InputGather _gather;
@@ -101,6 +102,7 @@ public class PlayerMovement : MonoBehaviour
         //ground chek
         _isGrounded = Physics2D.BoxCast(transform.position, Vector3.up*0.6f+Vector3.right*0.8f, 0, Vector2.down, 1.15f * _collider.radius, _groundCheckMask);
         _canStomp = !_isGrounded;
+        anim.SetAir(!_isGrounded);
     }
 
     void OnDrawGizmosSelected()
