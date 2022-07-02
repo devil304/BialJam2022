@@ -29,7 +29,6 @@ public class SecondRoundController : MonoBehaviour
         instance = this;
     }
 
-    [ContextMenu("Point to Player 1")]
     public void AddPointToPlayer1(GameObject duck)
     {
         Points.instance.IncreasePlayer1Points();
@@ -37,7 +36,6 @@ public class SecondRoundController : MonoBehaviour
         spawner.RemoveDuck(duck);
     }
 
-    [ContextMenu("Point to Player 2")]
     public void AddPointToPlayer2(GameObject duck)
     {
         Points.instance.IncreasePlayer1Points();
