@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Random = UnityEngine.Random;
 
 public class Follow : MonoBehaviour
 {
@@ -14,8 +15,12 @@ public class Follow : MonoBehaviour
 
     Tween _goToEndTween;
 
+    [SerializeField] AudioManager _playerAudioManager;
+    [SerializeField] AudioClip[] _gotChickenSFXes;
+
     public void AddChicken(Transform chicken){
         if(!chicken) return;
+        _playerAudioManager.PlaySFX(_gotChickenSFXes[Random.Range(0,_gotChickenSFXes.Length)]);
         var pos = Vector2.zero;
         int i = _chickens.Count;
             if(i==0){

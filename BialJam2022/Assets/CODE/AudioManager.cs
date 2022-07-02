@@ -1,18 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    [SerializeField] AudioSource[] _SFXLoopSources;
+    [SerializeField] AudioSource[] _SFXSources;
+
+
+    public void PlaySFX(AudioClip clip){
+        var sfxSource = _SFXSources.FirstOrDefault(sfx=>!sfx.isPlaying);
+        if(sfxSource==default(AudioSource)){
+            Debug.LogWarning("Not enaugh SFX audio sources");
+            return;
+        }
+        sfxSource.PlayOneShot(clip);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public int PlaySFXLoop(AudioClip clip){
+        var sfxLoopSource = _SFXLoopSources.FirstOrDefault(sfx=>!sfx.isPlaying);
+        if(sfxLoopSource==default(AudioSource)){
+            Debug.LogWarning("Not enaugh SFX Loop audio sources");
+            return -1;
+        }
+        sfxLoopSource.clip=clip;
+        sfxLoopSource.Play();
+        return _SFXLoopSources.ToList().IndexOf(sfxLoopSource);
+    }
+
+    public void StopSFXLoop(int index){
+        _SFXLoopSources[index].Stop();
     }
 }
