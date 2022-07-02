@@ -36,10 +36,7 @@ public class Spawner : MonoBehaviour
         
         for (var i = 0; i < ducks.Count; i++)
         {
-            if(Vector2.Distance(newRandomPoint, ducks[i].transform.position) < minimuDistance)
-            {
-
-            }
+            //if()
         }
 
         return newRandomPoint;
