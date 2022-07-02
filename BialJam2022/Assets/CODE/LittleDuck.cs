@@ -13,6 +13,7 @@ public class LittleDuck : MonoBehaviour
         {
             UnityEngine.Debug.Log("Collected");
             _collected = true;
+            other.GetComponent<Follow>().AddChicken(transform);
         }
     }
 }
