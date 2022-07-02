@@ -472,7 +472,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5765863275786032984, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
   m_PrefabInstance: {fileID: 447049485}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 447049488}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83599f3d97c749c48a42ae70e33cd2cb, type: 3}
@@ -481,6 +481,11 @@ MonoBehaviour:
 --- !u!212 &447049487 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 5765863275786032990, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+  m_PrefabInstance: {fileID: 447049485}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &447049488 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5765863275786032965, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
   m_PrefabInstance: {fileID: 447049485}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &472566923
@@ -524,6 +529,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5765863275786032991, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
   m_PrefabInstance: {fileID: 447049485}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &529860506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447049488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb33a79090ec618408989245ca76c511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &529860510 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5765863275786032985, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+  m_PrefabInstance: {fileID: 447049485}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447049488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87225f43a9e4e4d0f8cb26f66f0a10eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &789345994
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -587,12 +615,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+--- !u!1 &789345995 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5765863275786032965, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+  m_PrefabInstance: {fileID: 789345994}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &855851943 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5765863275786032985, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
   m_PrefabInstance: {fileID: 789345994}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 789345995}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87225f43a9e4e4d0f8cb26f66f0a10eb, type: 3}
@@ -926,6 +959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playersInputs:
   - {fileID: 855851943}
+  - {fileID: 529860510}
   _enableDebug: 0
 --- !u!4 &1173516553
 Transform:
@@ -952,7 +986,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5765863275786032984, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
   m_PrefabInstance: {fileID: 789345994}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 789345995}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83599f3d97c749c48a42ae70e33cd2cb, type: 3}
@@ -968,6 +1002,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5765863275786032991, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
   m_PrefabInstance: {fileID: 789345994}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1237155294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789345995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb33a79090ec618408989245ca76c511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1381985584
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,7 +1487,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7773247, y: 1}
+    m_SensorSize: {x: 1.7775842, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1665,7 +1711,7 @@ MonoBehaviour:
     swimSpeed: 140
   winerSprite: {fileID: 21300000, guid: d2610ea148f58394aab6a3d3af9ccd60, type: 3}
   loserSprite: {fileID: 21300000, guid: b4291955b1107024799a38f223d0ac90, type: 3}
-  winerCollisionRadius: 1.5
+  winerCollisionRadius: 1.2
   loserCollisionRadius: 0.5
 --- !u!4 &1926305297
 Transform:

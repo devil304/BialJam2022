@@ -15,6 +15,7 @@ public class Follow : MonoBehaviour
     Tween _goToEndTween;
 
     public void AddChicken(Transform chicken){
+        if(!chicken) return;
         var pos = Vector2.zero;
         int i = _chickens.Count;
             if(i==0){
@@ -28,6 +29,15 @@ public class Follow : MonoBehaviour
     public void RemoveChickens(int count){
         _chickenSprites.RemoveRange(_chickens.Count-count,count);
         _chickens.RemoveRange(_chickens.Count-count,count);
+    }
+
+    public Transform StealChicken(){
+        if(_chickens.Count==0)
+            return null;
+        _chickenSprites.RemoveAt(_chickens.Count-1);
+        var chicken = _chickens.Last();
+        _chickens.RemoveAt(_chickens.Count-1);
+        return chicken;
     }
 
     [SerializeField] float _maxMag = 0;
