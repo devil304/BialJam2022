@@ -36,7 +36,7 @@ public class Spawner : MonoBehaviour
         
         for (var i = 0; i < ducks.Count; i++)
         {
-            if()
+            //if()
         }
 
         return Vector2.zero;

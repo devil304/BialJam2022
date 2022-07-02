@@ -99,14 +99,16 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //ground chek
-        _isGrounded = Physics2D.BoxCast(transform.position, Vector3.up*0.5f+Vector3.right*0.75f, 0, Vector2.down, 0.8f * _collider.radius, _groundCheckMask);
+        _isGrounded = Physics2D.BoxCast(transform.position, Vector3.up*0.6f+Vector3.right*0.8f, 0, Vector2.down, 1.15f * _collider.radius, _groundCheckMask);
         _canStomp = !_isGrounded;
     }
 
     void OnDrawGizmosSelected()
     {
+        if(!_collider)
+            _collider = GetComponent<CircleCollider2D>();
         Gizmos.color = Color.blue;
-        Gizmos.DrawCube(transform.position+Vector3.down*0.8f * _collider.radius,Vector3.up*0.5f+Vector3.right*0.75f);
+        Gizmos.DrawCube(transform.position+Vector3.down*1.15f * _collider.radius,Vector3.up*0.6f+Vector3.right*0.8f);
     }
 }
 

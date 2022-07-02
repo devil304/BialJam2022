@@ -14091,7 +14091,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
 --- !u!50 &947330065
 Rigidbody2D:
   serializedVersion: 4
@@ -14125,6 +14125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83599f3d97c749c48a42ae70e33cd2cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSecondPlayer: 0
   rollForce: 250
   jumpForce: 12.5
   swimSpeed: 280
@@ -14237,7 +14238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd297d27b52209e49a31fcb6ff2dde78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _chickens: []
   _maxMag: 0
 --- !u!1 &1009705196
 GameObject:
@@ -17169,7 +17169,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
 --- !u!50 &2128976860
 Rigidbody2D:
   serializedVersion: 4
@@ -17203,6 +17203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83599f3d97c749c48a42ae70e33cd2cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSecondPlayer: 0
   rollForce: 250
   jumpForce: 12.5
   swimSpeed: 280
@@ -17300,7 +17301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd297d27b52209e49a31fcb6ff2dde78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _chickens: []
   _maxMag: 0
 --- !u!1001 &300511471772739882
 PrefabInstance:
