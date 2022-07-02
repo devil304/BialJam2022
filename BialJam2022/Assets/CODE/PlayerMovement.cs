@@ -68,9 +68,9 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         PerformInWaterAction();
-        if(!_mySprite.flipX && _rb.velocity.x<0)
+        if(!_mySprite.flipX && _rb.velocity.x<0 && Math.Abs(_rb.velocity.x)>0.064f)
             _mySprite.flipX = true;
-        else if(_mySprite.flipX && _rb.velocity.x>0)
+        else if(_mySprite.flipX && _rb.velocity.x>0 && Math.Abs(_rb.velocity.x)>0.064f)
             _mySprite.flipX = false;
     }
 
