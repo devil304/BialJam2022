@@ -1,3 +1,5 @@
+using System.Security.AccessControl;
+using System.Security.Cryptography.X509Certificates;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,6 +18,13 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer _mySprite;
     private bool _isGrounded,  _canStomp;
     
+
+    public void SetMovement(MoveParametr parametr)
+    {
+        rollForce = parametr.rollForce;
+        jumpForce = parametr.jumpForce;
+        swimSpeed = parametr.swimSpeed;
+    }
 
     private void Start()
     {
@@ -96,4 +105,12 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawCube(transform.position+Vector3.down*0.4f,Vector3.up*0.5f+Vector3.right*0.75f);
     }
+}
+
+[System.Serializable]
+public struct MoveParametr
+{
+    public float rollForce;
+    public float jumpForce;
+    public float swimSpeed;
 }
