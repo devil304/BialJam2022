@@ -20,7 +20,11 @@ public class Follow : MonoBehaviour
             }else{
                 pos = posHistory.ToArray()[posHistory.Count-6-(i*4)];
             }
-        _goToEndTween = chicken.DOMove(pos,0.25f).OnComplete(()=>_chickens.Add(chicken));
+        _goToEndTween = chicken.DOMove(pos,0.1f).OnComplete(()=>_chickens.Add(chicken));
+    }
+
+    public void RemoveChickens(int count){
+        _chickens.RemoveRange(_chickens.Count-count,count);
     }
 
     [SerializeField] float _maxMag = 0;

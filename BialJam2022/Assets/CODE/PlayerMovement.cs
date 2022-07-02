@@ -15,7 +15,9 @@ public class PlayerMovement : MonoBehaviour
     private EnviromentScaner _scaner;
     private InputGather _gather;
     private Rigidbody2D _rb;
+    private SpriteRenderer _mySprite;
     private bool _isGrounded,  _canStomp;
+    
 
     public void SetMovement(MoveParametr parametr)
     {
@@ -29,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         _gather = GetComponent<InputGather>();
         _rb = GetComponent<Rigidbody2D>();
         _scaner = GetComponent<EnviromentScaner>();
+        _mySprite = GetComponent<SpriteRenderer>();
 
         _gather.keys.jump += Jump;
     }
@@ -62,6 +65,10 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         PerformInWaterAction();
+        if(!_mySprite.flipX && _rb.velocity.x<0)
+            _mySprite.flipX = true;
+        else if(_mySprite.flipX && _rb.velocity.x>0)
+            _mySprite.flipX = false;
     }
 
     private void PerformInWaterAction()
