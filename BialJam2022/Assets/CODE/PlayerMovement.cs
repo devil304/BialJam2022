@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
         if (_gather.keys.movement.sqrMagnitude > 0.01f)
         {
             //Debug.Log(_gather.keys.movement * rollForce);
-            _rb.AddForceAtPosition(_gather.keys.movement * rollForce * Time.deltaTime, transform.position + (Vector3)(Vector2.up * 0.1f));
+            _rb.AddForceAtPosition(_gather.keys.movement * (_isGrounded? rollForce : rollForce * 0.5f) * Time.deltaTime, transform.position + (Vector3)(Vector2.up * 0.1f));
         }
 
         //ground chek
