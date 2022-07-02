@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour
     {
         ducks = new List<GameObject>();
 
-        InvokeRepeating("SpawnDuck", 0.5f, timeBetweenSpawn);
+        //InvokeRepeating("SpawnDuck", 0.5f, timeBetweenSpawn);
     }
 
     private void SpawnDuck()
@@ -36,10 +36,13 @@ public class Spawner : MonoBehaviour
         
         for (var i = 0; i < ducks.Count; i++)
         {
-            if()
+            if(Vector2.Distance(newRandomPoint, ducks[i].transform.position) < minimuDistance)
+            {
+
+            }
         }
 
-        return Vector2.zero;
+        return newRandomPoint;
     }
 
 }
