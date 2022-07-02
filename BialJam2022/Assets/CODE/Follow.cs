@@ -27,6 +27,21 @@ public class Follow : MonoBehaviour
     }
 
     public void RemoveChickens(int count){
+        if(_chickens.Count == 0) return;
+        if(_chickens.Count < count)
+        {
+            for (var i = 0; i < _chickens.Count; i++)
+            {
+                Destroy( _chickens[i].gameObject );
+            }
+            _chickens.Clear();
+            _chickenSprites.Clear();
+            return;
+        }
+        for (var i = _chickens.Count-count; i < _chickens.Count; i++)
+        {
+            Destroy( _chickens[i].gameObject );
+        }
         _chickenSprites.RemoveRange(_chickens.Count-count,count);
         _chickens.RemoveRange(_chickens.Count-count,count);
     }
