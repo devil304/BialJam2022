@@ -7,6 +7,11 @@ public class WorldChunk : MonoBehaviour
     WorldManager _worldManager;
     int _myChunkNumber=-1;
 
+    void Awake()
+    {
+        _worldManager = GetComponentInParent<WorldManager>();
+    }
+
     public void SetChunkNumber(int number){
         _myChunkNumber = number;
     }
