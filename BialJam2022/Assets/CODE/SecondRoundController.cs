@@ -13,26 +13,60 @@ public class SecondRoundController : MonoBehaviour
 
     [SerializeField] private Sprite winerSprite;
     [SerializeField] private Sprite loserSprite;
+
+    [SerializeField] private float winerCollisionRadius;
+    [SerializeField] private float loserCollisionRadius;
     
+
+    public PlayerInfo Player1 => player1;
+    public PlayerInfo Player2 => player2;
+
+    [ContextMenu("Point to Player 1")]
+    public void AddPointToPlayer1()
+    {
+        player1.ducks++;
+        CheckWineLoser();
+    }
+
+    [ContextMenu("Point to Player 2")]
+    public void AddPointToPlayer2()
+    {
+        player2.ducks++;
+        CheckWineLoser();
+    }
 
     void Start()
     {
+        CheckWineLoser();
+    }
+
+    private void CheckWineLoser()
+    {
+        if(player1.ducks == player2.ducks) return;
         if(player1.ducks > player2.ducks)
         {
-            player1.sprite.sprite = winerSprite;
-            player1.movement.SetMovement(winer);
-
-            player2.sprite.sprite = loserSprite;
-            player2.movement.SetMovement(loser);
+            SetWiner(player1);
+            SetLoser(player2);
         }
         else
         {
-            player2.sprite.sprite = winerSprite;
-            player2.movement.SetMovement(winer);
-
-            player1.sprite.sprite = loserSprite;
-            player1.movement.SetMovement(loser);
+            SetWiner(player2);
+            SetLoser(player1);
         }
+    }
+
+    private void SetLoser(PlayerInfo player)
+    {
+        player.sprite.sprite = loserSprite;
+        player.movement.SetMovement(loser);
+        player.collider.radius = loserCollisionRadius;
+    }
+
+    private void SetWiner(PlayerInfo player)
+    {
+        player.sprite.sprite = winerSprite;
+        player.movement.SetMovement(winer);
+        player.collider.radius = winerCollisionRadius;
     }
 }
 
@@ -42,4 +76,5 @@ public class PlayerInfo
     public int ducks;
     public SpriteRenderer sprite;
     public PlayerMovement movement;
+    public CircleCollider2D collider;
 }

@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private bool isSecondPlayer;
     [SerializeField] private float rollForce = 1f;
     [SerializeField] private float jumpForce = 100f;
     [SerializeField] private float swimSpeed = 10f;
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private InputGather _gather;
     private Rigidbody2D _rb;
     private SpriteRenderer _mySprite;
+    private CircleCollider2D _collider;
     private bool _isGrounded,  _canStomp;
     
 
@@ -32,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _scaner = GetComponent<EnviromentScaner>();
         _mySprite = GetComponent<SpriteRenderer>();
+        _collider = GetComponent<CircleCollider2D>();
 
         _gather.keys.jump += Jump;
     }
@@ -96,14 +99,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //ground chek
-        _isGrounded = Physics2D.BoxCast(transform.position, Vector3.up*0.5f+Vector3.right*0.75f, 0, Vector2.down, 0.4f, _groundCheckMask);
+        _isGrounded = Physics2D.BoxCast(transform.position, Vector3.up*0.5f+Vector3.right*0.75f, 0, Vector2.down, 0.8f * _collider.radius, _groundCheckMask);
         _canStomp = !_isGrounded;
     }
 
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawCube(transform.position+Vector3.down*0.4f,Vector3.up*0.5f+Vector3.right*0.75f);
+        Gizmos.DrawCube(transform.position+Vector3.down*0.8f * _collider.radius,Vector3.up*0.5f+Vector3.right*0.75f);
     }
 }
 
