@@ -18,6 +18,7 @@ public class InputLowerManager : MonoBehaviour
 
     void Awake()
     {
+        Application.targetFrameRate = 60;
         _playerMaps = new PlayerInputBaseMap[2];
         for(int i=0;i<_playerMaps.Length;i++){
             _playerMaps[i] = new PlayerInputBaseMap();
