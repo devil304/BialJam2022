@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 8057326294926473224}
   - component: {fileID: 8057326294926473225}
   - component: {fileID: 8057326294926473238}
+  - component: {fileID: 4888997704637689211}
+  - component: {fileID: 1877675952773105868}
+  - component: {fileID: 3126865850094313369}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -97,7 +100,7 @@ CapsuleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.11}
   m_Size: {x: 1.54, y: 0.0001}
@@ -114,6 +117,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 658f3ea99a4790b40a0099073da8cd4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!70 &4888997704637689211
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8057326294926473239}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.11}
+  m_Size: {x: 15.4, y: 0.0001}
+  m_Direction: 0
+--- !u!252 &1877675952773105868
+SurfaceEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8057326294926473239}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Speed: 10
+  m_SpeedVariation: 0
+  m_ForceScale: 0.5
+  m_UseContactForce: 1
+  m_UseFriction: 1
+  m_UseBounce: 1
+--- !u!114 &3126865850094313369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8057326294926473239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e8ed65ee8c56494cbfe15ec07d3da66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxLoopClip: {fileID: 8300000, guid: f1dc7b38c6bdb2c4fbd5677d61a204f4, type: 3}
+  _minDist: 1
+  _maxDist: 10
+  _louder: 0
 --- !u!1 &8057326295032105507
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +199,7 @@ Transform:
   m_Children:
   - {fileID: 8057326294926473227}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8057326295032105506
 MonoBehaviour:

@@ -20,6 +20,8 @@ public class Follow : MonoBehaviour
     [SerializeField] AudioClip[] _gotChickenSFXes;
     [SerializeField] AudioClip[] _lostChickenSFXes;
 
+    public AudioManager AudioManager => _playerAudioManager;
+
     void Awake()
     {
         _myPlayerM = GetComponent<PlayerMovement>();

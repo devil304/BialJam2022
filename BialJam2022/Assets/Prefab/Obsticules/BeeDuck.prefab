@@ -65,7 +65,7 @@ Transform:
   - {fileID: 831305552248639398}
   - {fileID: 831305551854512339}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &831305552173432455
 MonoBehaviour:
@@ -150,6 +150,8 @@ GameObject:
   - component: {fileID: 831305552278015148}
   - component: {fileID: 831305552278015155}
   - component: {fileID: 4825136681278922334}
+  - component: {fileID: 1482419542100980251}
+  - component: {fileID: 8840377534151088755}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -270,3 +272,34 @@ SurfaceEffector2D:
   m_UseContactForce: 1
   m_UseFriction: 1
   m_UseBounce: 1
+--- !u!70 &1482419542100980251
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831305552278015154}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.11}
+  m_Size: {x: 15.4, y: 1.31}
+  m_Direction: 0
+--- !u!114 &8840377534151088755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831305552278015154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e8ed65ee8c56494cbfe15ec07d3da66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxLoopClip: {fileID: 8300000, guid: 690a83eb9fefc3a4b85e4612eb8440d6, type: 3}
+  _minDist: 1
+  _maxDist: 10
