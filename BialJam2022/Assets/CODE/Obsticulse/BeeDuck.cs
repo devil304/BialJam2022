@@ -6,10 +6,15 @@ using UnityEngine;
 
 public class BeeDuck : MonoBehaviour
 {
+    [SerializeField] private bool isMoving = true;
     [SerializeField] private float speed;
     [SerializeField] private Transform ULPoint;
     [SerializeField] private Transform DRPoint;
     [SerializeField] private CollisionObsticulse collision;
+
+    [SerializeField] private AudioManager audio;
+
+    [SerializeField] private AudioClip[] clips;
 
     private Vector2 _randomDestination;
     private List<Vector2> _posHis;
@@ -23,6 +28,7 @@ public class BeeDuck : MonoBehaviour
 
     void Update()
     {
+        if(!isMoving) return;
         if(Vector2.Distance(_randomDestination,collision.transform.position) > 0.25f)
         {
             collision.transform.DOMove(_randomDestination, speed);

@@ -12,11 +12,17 @@ public class Follow : MonoBehaviour
 
     List<Transform> _chickens = new List<Transform>();
     List<SpriteRenderer> _chickenSprites = new List<SpriteRenderer>();
+    PlayerMovement _myPlayerM;
 
     Tween _goToEndTween;
 
     [SerializeField] AudioManager _playerAudioManager;
     [SerializeField] AudioClip[] _gotChickenSFXes;
+
+    void Awake()
+    {
+        _myPlayerM = GetComponent<PlayerMovement>();
+    }
 
     public void AddChicken(Transform chicken){
         if(!chicken) return;
@@ -37,7 +43,11 @@ public class Follow : MonoBehaviour
         {
             for (var i = 0; i < _chickens.Count; i++)
             {
-                Destroy( _chickens[i].gameObject );
+                _chickens[i].DOMove(_chickens[i].position+Vector3.down*25f,1.5f);
+                if (_myPlayerM.isSecondPlayer)
+                    Points.instance.player2Point--;
+                else
+                    Points.instance.player1Point--;
             }
             _chickens.Clear();
             _chickenSprites.Clear();
@@ -45,7 +55,11 @@ public class Follow : MonoBehaviour
         }
         for (var i = _chickens.Count-count; i < _chickens.Count; i++)
         {
-            Destroy( _chickens[i].gameObject );
+            _chickens[i].DOMove(_chickens[i].position+Vector3.down*25f,1.5f);
+            if (_myPlayerM.isSecondPlayer)
+                Points.instance.player2Point--;
+            else
+                Points.instance.player1Point--;
         }
         _chickenSprites.RemoveRange(_chickens.Count-count,count);
         _chickens.RemoveRange(_chickens.Count-count,count);

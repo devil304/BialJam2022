@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         //Jump
         if(_gather.keys.movement.y != 0 && _gather.keys.movement.y>0.36f)
         {
-            _rb.AddForce(_gather.keys.movement * jumpForce, ForceMode2D.Impulse);
+            _rb.AddForce(_gather.keys.movement.normalized * jumpForce, ForceMode2D.Impulse);
         }
     }
 
@@ -82,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
         //free Move
         if (_gather.keys.movement.sqrMagnitude > 0.01f)
         {   
-            _rb.velocity = (_gather.keys.movement * swimSpeed * Time.fixedDeltaTime);
+            _rb.velocity = (_gather.keys.movement.normalized * swimSpeed * Time.fixedDeltaTime);
             //_rb.AddForce(_gather.keys.movement * swimSpeed * Time.deltaTime);
         }
 
@@ -96,11 +96,11 @@ public class PlayerMovement : MonoBehaviour
         if (_gather.keys.movement.sqrMagnitude > 0.01f)
         {
             //Debug.Log(_gather.keys.movement * rollForce);
-            _rb.AddForceAtPosition(_gather.keys.movement * (_isGrounded? rollForce : rollForce * 0.5f) * Time.deltaTime, transform.position + (Vector3)(Vector2.up * 0.1f));
+            _rb.AddForceAtPosition(_gather.keys.movement.normalized * (_isGrounded? rollForce : rollForce * 0.5f) * Time.deltaTime, transform.position + (Vector3)(Vector2.up * 0.1f));
         }
 
         //ground chek
-        _isGrounded = Physics2D.BoxCast(transform.position, Vector3.up*0.6f+Vector3.right*0.8f, 0, Vector2.down, 1.15f * _collider.radius, _groundCheckMask);
+        _isGrounded = Physics2D.BoxCast(transform.position, Vector3.up*0.6f+Vector3.right*1.2f, 0, Vector2.down, 1.15f * _collider.radius, _groundCheckMask);
         _canStomp = !_isGrounded;
         anim.SetAir(!_isGrounded);
     }
@@ -110,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
         if(!_collider)
             _collider = GetComponent<CircleCollider2D>();
         Gizmos.color = Color.blue;
-        Gizmos.DrawCube(transform.position+Vector3.down*1.15f * _collider.radius,Vector3.up*0.6f+Vector3.right*0.8f);
+        Gizmos.DrawCube(transform.position+Vector3.down*1.15f * _collider.radius,Vector3.up*0.6f+Vector3.right*1.2f);
     }
 }
 

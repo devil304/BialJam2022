@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 831305552173432448}
   - component: {fileID: 831305552173432455}
+  - component: {fileID: 390421691265829967}
   m_Layer: 0
   m_Name: BeeDuck
   m_TagString: Untagged
@@ -64,7 +65,7 @@ Transform:
   - {fileID: 831305552248639398}
   - {fileID: 831305551854512339}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &831305552173432455
 MonoBehaviour:
@@ -78,10 +79,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c6aaa12c7eb724bab9ac20d3497f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMoving: 1
   speed: 3
   ULPoint: {fileID: 831305552248639398}
   DRPoint: {fileID: 831305551854512339}
   collision: {fileID: 831305552278015155}
+  audio: {fileID: 0}
+  clips: []
+--- !u!95 &390421691265829967
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831305552173432454}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4511dfd62fab3014e9067574c89911bc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &831305552248639397
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +211,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b6c74fe3c148f6a42a40bf888a4ef4e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

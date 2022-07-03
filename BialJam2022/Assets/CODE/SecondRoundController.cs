@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class SecondRoundController : MonoBehaviour
@@ -20,6 +21,9 @@ public class SecondRoundController : MonoBehaviour
 
     [SerializeField] private float winerCollisionRadius;
     [SerializeField] private float loserCollisionRadius;
+
+    [SerializeField] private AnimatorController winnerController;
+    [SerializeField] private AnimatorController loserController;
 
     public PlayerInfo Player1 => player1;
     public PlayerInfo Player2 => player2;
@@ -74,6 +78,7 @@ public class SecondRoundController : MonoBehaviour
         player.sprite.sprite = loserSprite;
         player.movement.SetMovement(loser);
         player.collider.radius = loserCollisionRadius;
+        player.anim.runtimeAnimatorController = loserController;
     }
 
     private void SetWiner(PlayerInfo player)
@@ -81,6 +86,7 @@ public class SecondRoundController : MonoBehaviour
         player.sprite.sprite = winerSprite;
         player.movement.SetMovement(winer);
         player.collider.radius = winerCollisionRadius;
+        player.anim.runtimeAnimatorController = winnerController;
     }
 }
 
@@ -90,4 +96,5 @@ public class PlayerInfo
     public SpriteRenderer sprite;
     public PlayerMovement movement;
     public CircleCollider2D collider;
+    public Animator anim;
 }

@@ -33,7 +33,7 @@ Transform:
   - {fileID: 8738990276998452704}
   - {fileID: 8738990278694363862}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8738990276928993743
 MonoBehaviour:
@@ -47,10 +47,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c6aaa12c7eb724bab9ac20d3497f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMoving: 1
   speed: 3
   ULPoint: {fileID: 8738990276998452704}
   DRPoint: {fileID: 8738990278694363862}
   collision: {fileID: 8738990278522154860}
+  audio: {fileID: 0}
+  clips: []
 --- !u!1 &8738990276998452705
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +159,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 95dada6c725ba6544ac53334c3395720, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
