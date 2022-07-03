@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
+using UnityEngine.SceneManagement;
 
 public class InputLowerManager : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class InputLowerManager : MonoBehaviour
             _playerMaps[i].Movement.Enable();
             _playerMaps[i].Misc.Enable();
             _playerMaps[i].devices = null;
+            _playerMaps[i].Misc.Menu_Pause.started += StartedMenu;
         }
 
         for(int i=0;i<_playersInputs.Length;i++){
@@ -44,9 +46,16 @@ public class InputLowerManager : MonoBehaviour
         InputSystem.onDeviceChange += DeviceStateChanged;
     }
 
+    private void StartedMenu(InputAction.CallbackContext obj)
+    {
+        SceneManager.LoadScene(0);
+    }
+
+
+
     #region  Test
     //Test only
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
     private void Movement1Performed(InputAction.CallbackContext obj)
     {
         if(_enableDebug)
