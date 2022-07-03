@@ -6,10 +6,17 @@ using UnityEngine.UI;
 
 public class MenuHandler : MonoBehaviour
 {
+    public static MenuHandler instante;
+
     [SerializeField] private GameObject tutorialScreen;
     [SerializeField] private GameObject tutorialScreenSecond;
 
     [SerializeField] private Button[] buttons;
+
+    void Awake()
+    {
+        instante = this;
+    }
 
     public void StartGame(){
         SceneManager.LoadScene(1);

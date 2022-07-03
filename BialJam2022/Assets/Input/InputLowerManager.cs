@@ -28,6 +28,7 @@ public class InputLowerManager : MonoBehaviour
             _playerMaps[i].Misc.Enable();
             _playerMaps[i].devices = null;
             _playerMaps[i].Misc.Menu_Pause.started += StartedMenu;
+            _playerMaps[i].Misc.TutorialBack.started += BackToMenu;
         }
 
         for(int i=0;i<_playersInputs.Length;i++){
@@ -44,6 +45,11 @@ public class InputLowerManager : MonoBehaviour
             DeviceStateChanged(device,InputDeviceChange.Added);
         }
         InputSystem.onDeviceChange += DeviceStateChanged;
+    }
+
+    private void BackToMenu(InputAction.CallbackContext obj)
+    {
+        MenuHandler.instante.HideTutorial();
     }
 
     private void StartedMenu(InputAction.CallbackContext obj)
