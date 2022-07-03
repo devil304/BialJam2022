@@ -91,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
     private void PerformInAirAction()
     {
         if (_scaner.CheckIsInWater()) return;
-        _rb.gravityScale = 1f;
+        _rb.gravityScale = 1.5f;
         //roll
         if (_gather.keys.movement.sqrMagnitude > 0.01f)
         {

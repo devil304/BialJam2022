@@ -20687,8 +20687,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSecondPlayer: 1
-  rollForce: 580
-  jumpForce: 13
+  rollForce: 640
+  jumpForce: 9
   swimSpeed: 280
   _groundCheckMask:
     serializedVersion: 2
@@ -33676,8 +33676,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSecondPlayer: 0
-  rollForce: 580
-  jumpForce: 13
+  rollForce: 640
+  jumpForce: 9
   swimSpeed: 280
   _groundCheckMask:
     serializedVersion: 2
