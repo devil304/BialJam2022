@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer _mySprite;
     private CircleCollider2D _collider;
     private bool _isGrounded,  _canStomp;
+    bool _coolDown = false;
+    float _timer = 0;
     
     
 
@@ -53,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         // }
         if (!_isGrounded || _scaner.CheckIsInWater()) return;
         //Jump
-        if(_gather.keys.movement.y != 0 && _gather.keys.movement.y>0.36f)
+        if(_gather.keys.movement.y != 0 && _gather.keys.movement.y>0.36f && !_coolDown)
         {
             _rb.AddForce(_gather.keys.movement.normalized * jumpForce, ForceMode2D.Impulse);
         }
@@ -63,9 +65,20 @@ public class PlayerMovement : MonoBehaviour
     {
         
         PerformInAirAction();
+        if(_coolDown){
+            if(_timer>1.5f){
+                _coolDown = false;
+                _timer = 0;
+            }else
+                _timer+=Time.deltaTime;
+        }
 
         //PerformInWaterAction();
 
+    }
+
+    public void SetMovementCoolDown(){
+        _coolDown = true;
     }
 
     void FixedUpdate()
@@ -82,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
         if (_scaner.CheckIsInAir()) return;
         _rb.gravityScale = 0.43f;
         //free Move
-        if (_gather.keys.movement.sqrMagnitude > 0.01f)
+        if (_gather.keys.movement.sqrMagnitude > 0.01f && !_coolDown)
         {   
             _rb.velocity = (_gather.keys.movement.normalized * swimSpeed * Time.fixedDeltaTime);
             //_rb.AddForce(_gather.keys.movement * swimSpeed * Time.deltaTime);
@@ -95,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
         if (_scaner.CheckIsInWater()) return;
         _rb.gravityScale = 1.5f;
         //roll
-        if (_gather.keys.movement.sqrMagnitude > 0.01f)
+        if (_gather.keys.movement.sqrMagnitude > 0.01f && !_coolDown)
         {
             //Debug.Log(_gather.keys.movement * rollForce);
             _rb.AddForceAtPosition(_gather.keys.movement.normalized * (_isGrounded? rollForce : rollForce * 0.5f) * Time.deltaTime, transform.position + (Vector3)(Vector2.up * 0.1f));

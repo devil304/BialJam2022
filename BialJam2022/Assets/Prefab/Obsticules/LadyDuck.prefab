@@ -35,7 +35,7 @@ Transform:
   - {fileID: 8832186314342846201}
   - {fileID: 8832186313838626944}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8832186313055386964
 MonoBehaviour:
@@ -49,10 +49,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c6aaa12c7eb724bab9ac20d3497f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMoving: 1
   speed: 3
   ULPoint: {fileID: 8832186314342846201}
   DRPoint: {fileID: 8832186313838626944}
   collision: {fileID: 8832186314215868825}
+  audio: {fileID: 0}
+  clips: []
 --- !u!95 &8137998593212300459
 Animator:
   serializedVersion: 4
@@ -168,6 +171,7 @@ GameObject:
   - component: {fileID: 8832186314215868827}
   - component: {fileID: 8832186314215868826}
   - component: {fileID: 8832186314215868825}
+  - component: {fileID: 7641415771029939774}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -230,7 +234,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 5f71242a6e7e3e047a230248914488ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -253,7 +257,7 @@ CapsuleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.11}
   m_Size: {x: 1.54, y: 1.31}
@@ -270,6 +274,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 658f3ea99a4790b40a0099073da8cd4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!252 &7641415771029939774
+SurfaceEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8832186314215868824}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Speed: 10
+  m_SpeedVariation: 0
+  m_ForceScale: 0.5
+  m_UseContactForce: 1
+  m_UseFriction: 1
+  m_UseBounce: 1
 --- !u!1 &8832186314342846200
 GameObject:
   m_ObjectHideFlags: 0

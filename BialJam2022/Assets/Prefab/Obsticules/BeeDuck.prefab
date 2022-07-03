@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 831305552278015149}
   - component: {fileID: 831305552278015148}
   - component: {fileID: 831305552278015155}
+  - component: {fileID: 4825136681278922334}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -234,7 +235,7 @@ CapsuleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.11}
   m_Size: {x: 1.54, y: 1.31}
@@ -251,3 +252,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 658f3ea99a4790b40a0099073da8cd4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!252 &4825136681278922334
+SurfaceEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831305552278015154}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Speed: 10
+  m_SpeedVariation: 0
+  m_ForceScale: 0.5
+  m_UseContactForce: 1
+  m_UseFriction: 1
+  m_UseBounce: 1
