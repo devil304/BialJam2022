@@ -23,7 +23,7 @@ public class BeeDuck : MonoBehaviour
 
     void Start()
     {
-        _randomDestination = GetRandomPosition();
+        if(isMoving)_randomDestination = GetRandomPosition();
         _posHis = new List<Vector2>();
         collision.onHit += HitPlayer;
         WorldManager.ChunkUpdate += WorldUpdated;

@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float timeBetweenSpawn = 1f;
     [SerializeField] private float minimuDistance;
     [SerializeField] private GameObject duckPrefab;
+    [SerializeField] private LayerMask platformMask;
 
     private List<GameObject> ducks;
 
@@ -51,7 +52,8 @@ public class Spawner : MonoBehaviour
         
         for (var i = 0; i < ducks.Count; i++)
         {
-            if(Vector2.Distance(newRandomPoint, ducks[i].transform.position) < minimuDistance)
+            if(Vector2.Distance(newRandomPoint, ducks[i].transform.position) < minimuDistance &&
+                Physics2D.OverlapCircle(newRandomPoint, 1f,platformMask))
             {
                 return GetRandomPoint();
             }
