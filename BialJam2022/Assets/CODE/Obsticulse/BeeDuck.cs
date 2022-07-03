@@ -18,20 +18,33 @@ public class BeeDuck : MonoBehaviour
 
     private Vector2 _randomDestination;
     private List<Vector2> _posHis;
+    Tween _tween;
 
     void Start()
     {
         _randomDestination = GetRandomPosition();
         _posHis = new List<Vector2>();
         collision.onHit += HitPlayer;
+        WorldManager.ChunkUpdate += WorldUpdated;
+    }
+
+    private void WorldUpdated()
+    {
+        if((collision.transform.position-transform.position).sqrMagnitude>100f*100f){
+            if(_tween.active)
+                _tween.Kill();
+            collision.transform.position = transform.position;
+        }
     }
 
     void Update()
     {
         if(!isMoving) return;
-        if(Vector2.Distance(_randomDestination,collision.transform.position) > 0.25f)
+        var dist = Vector2.Distance(_randomDestination,collision.transform.position);
+        if(dist>100f) return;
+        if(dist > 0.25f)
         {
-            collision.transform.DOMove(_randomDestination, speed);
+            _tween = collision.transform.DOMove(_randomDestination, speed);
         }
         else
         {
