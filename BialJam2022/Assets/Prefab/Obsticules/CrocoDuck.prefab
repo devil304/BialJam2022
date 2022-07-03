@@ -65,7 +65,7 @@ Transform:
   - {fileID: 5187685914738013558}
   - {fileID: 5187685915685191188}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5187685915108114950
 MonoBehaviour:
@@ -79,10 +79,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c6aaa12c7eb724bab9ac20d3497f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMoving: 1
   speed: 3
   ULPoint: {fileID: 5187685914738013558}
   DRPoint: {fileID: 5187685915685191188}
   collision: {fileID: 5187685916365140169}
+  audio: {fileID: 0}
+  clips: []
 --- !u!95 &7418433878670965887
 Animator:
   serializedVersion: 4
@@ -146,6 +149,7 @@ GameObject:
   - component: {fileID: 5187685916365140180}
   - component: {fileID: 5187685916365140171}
   - component: {fileID: 5187685916365140169}
+  - component: {fileID: 998060278142631622}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -208,7 +212,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 3d633562516a2f54bb52f7ea73590bd8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -231,7 +235,7 @@ CapsuleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0}
   m_Size: {x: 2.2, y: 0.87}
@@ -248,3 +252,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 658f3ea99a4790b40a0099073da8cd4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!252 &998060278142631622
+SurfaceEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5187685916365140168}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Speed: 10
+  m_SpeedVariation: 0
+  m_ForceScale: 0.5
+  m_UseContactForce: 1
+  m_UseFriction: 1
+  m_UseBounce: 1

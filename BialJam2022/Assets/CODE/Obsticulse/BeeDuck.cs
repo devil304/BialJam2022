@@ -61,6 +61,8 @@ public class BeeDuck : MonoBehaviour
         _coolDown = true;
         player.GetComponent<Follow>().RemoveChickens(2);
         player.GetComponent<AnimationController>().LostDuck();
+        var playerRB = player.GetComponent<Rigidbody2D>();
+        playerRB.velocity = (player.transform.position-collision.transform.position).normalized*5f;
         DOVirtual.DelayedCall(0.5f,()=>_coolDown=false);
     }
 

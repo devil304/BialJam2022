@@ -44,8 +44,10 @@ public class EnviromentScaner : MonoBehaviour
     {
         Debug.Log("Out water");
         _inWater = false;
-        if(_sfxId>=0)
+        if(_sfxId>=0){
             _playerAudioManager.StopSFXLoop(_sfxId);
+            _sfxId = -1;
+        }
         _inAir = !_inWater;
         anim.SetWater(_inWater);
     }
