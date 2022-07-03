@@ -2,14 +2,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class AnimationController : MonoBehaviour
 {
     [SerializeField] private Animator anim;
+    
+    [SerializeField] AudioManager _playerAudioManager;
+    [SerializeField] AudioClip[] _bounceSFXes;
 
     public void SetAir(bool state)
     {
         anim.SetBool("inAir", state);
+            
+    }
+
+    public void PlayBounce(){
+        _playerAudioManager.PlaySFX(_bounceSFXes[Random.Range(0,_bounceSFXes.Length)],true);
     }
 
     public void SetWater(bool state)

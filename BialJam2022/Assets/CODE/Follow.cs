@@ -18,6 +18,7 @@ public class Follow : MonoBehaviour
 
     [SerializeField] AudioManager _playerAudioManager;
     [SerializeField] AudioClip[] _gotChickenSFXes;
+    [SerializeField] AudioClip[] _lostChickenSFXes;
 
     void Awake()
     {
@@ -38,6 +39,7 @@ public class Follow : MonoBehaviour
     }
 
     public void RemoveChickens(int count){
+        _playerAudioManager.PlaySFX(_lostChickenSFXes[Random.Range(0,_lostChickenSFXes.Length)]);
         if(_chickens.Count == 0) return;
         if(_chickens.Count < count)
         {

@@ -70,6 +70,7 @@ public class InputLowerManager : MonoBehaviour
                 if(_playerMaps[i].devices==null)
                     break;
             }
+            if(i>=_playerMaps.Length) return;
             _playerMaps[i].devices = new ReadOnlyArray<InputDevice>(new InputDevice[]{device});
             _playerMaps[i].Enable();
             _connectedDevices.Add(new KeyValuePair<InputDevice, int>(device,i));

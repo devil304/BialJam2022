@@ -7,6 +7,11 @@ public class EnviromentScaner : MonoBehaviour
     [SerializeField] private AnimationController anim;
     [SerializeField] private LayerMask waterMask;
 
+    [SerializeField] AudioManager _playerAudioManager;
+    [SerializeField] AudioClip _waterLoop;
+
+    int _sfxId = -1;
+
     private bool _inAir=true, _inWater;
 
 //    private void Update()
@@ -29,6 +34,8 @@ public class EnviromentScaner : MonoBehaviour
     {
         Debug.Log("In water");
         _inWater = true;
+        if(_sfxId<0)
+            _sfxId = _playerAudioManager.PlaySFXLoop(_waterLoop,true);
         _inAir = !_inWater;
         anim.SetWater(_inWater);
     }
@@ -37,6 +44,8 @@ public class EnviromentScaner : MonoBehaviour
     {
         Debug.Log("Out water");
         _inWater = false;
+        if(_sfxId>=0)
+            _playerAudioManager.StopSFXLoop(_sfxId);
         _inAir = !_inWater;
         anim.SetWater(_inWater);
     }

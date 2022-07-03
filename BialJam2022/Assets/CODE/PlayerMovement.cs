@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer _mySprite;
     private CircleCollider2D _collider;
     private bool _isGrounded,  _canStomp;
+    
     
 
     public void SetMovement(MoveParametr parametr)
