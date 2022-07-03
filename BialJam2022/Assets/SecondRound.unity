@@ -300,9 +300,9 @@ GameObject:
   - component: {fileID: 298588209}
   - component: {fileID: 298588211}
   - component: {fileID: 298588210}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -594,6 +594,42 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 447049489}
+    - target: {fileID: 1237155294, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+      propertyPath: _playerAudioManager
+      value: 
+      objectReference: {fileID: 1826169675}
+    - target: {fileID: 1237155294, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+      propertyPath: _bounceSFXes.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237155294, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+      propertyPath: _bounceSFXes.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: b1d61d7889e5b324197777d3ab33bc0c, type: 3}
+    - target: {fileID: 1237155294, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+      propertyPath: _bounceSFXes.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: d4e7d7a3f0604744c9d07a602cbe6e32, type: 3}
+    - target: {fileID: 1237155294, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+      propertyPath: _bounceSFXes.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0cda9201b96ab224481974356cb80ce3, type: 3}
+    - target: {fileID: 1237155294, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+      propertyPath: _bounceSFXes.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 079f6e2119a5e9c43b8008c3142ca814, type: 3}
+    - target: {fileID: 1237155294, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+      propertyPath: _bounceSFXes.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3d604d96e692b55469220e2f1b8e97d4, type: 3}
+    - target: {fileID: 1237155294, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+      propertyPath: _bounceSFXes.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: f930a951e1aa9b249a4354c3dd7f3e62, type: 3}
+    - target: {fileID: 1237155294, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+      propertyPath: _bounceSFXes.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: cc6a7fe403e912240b7e2b6ecc2446d3, type: 3}
     - target: {fileID: 5765863275786032965, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
       propertyPath: m_Name
       value: Player (1)
@@ -606,6 +642,10 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5765863275786032988, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+      propertyPath: _playerAudioManager
+      value: 
+      objectReference: {fileID: 1826169675}
     - target: {fileID: 5765863275786032989, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
       propertyPath: _playerAudioManager
       value: 
@@ -632,7 +672,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 38010ca2c9b91eb4497be3987296d857, type: 3}
     - target: {fileID: 5765863275786032990, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5765863275786032991, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
       propertyPath: m_RootOrder
@@ -1149,8 +1189,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 10
   field of view: 92
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 10.8
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -1189,10 +1229,50 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1237155294, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+      propertyPath: _playerAudioManager
+      value: 
+      objectReference: {fileID: 353604572}
+    - target: {fileID: 1237155294, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+      propertyPath: _bounceSFXes.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237155294, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+      propertyPath: _bounceSFXes.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: b1d61d7889e5b324197777d3ab33bc0c, type: 3}
+    - target: {fileID: 1237155294, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+      propertyPath: _bounceSFXes.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: d4e7d7a3f0604744c9d07a602cbe6e32, type: 3}
+    - target: {fileID: 1237155294, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+      propertyPath: _bounceSFXes.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0cda9201b96ab224481974356cb80ce3, type: 3}
+    - target: {fileID: 1237155294, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+      propertyPath: _bounceSFXes.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 079f6e2119a5e9c43b8008c3142ca814, type: 3}
+    - target: {fileID: 1237155294, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+      propertyPath: _bounceSFXes.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3d604d96e692b55469220e2f1b8e97d4, type: 3}
+    - target: {fileID: 1237155294, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+      propertyPath: _bounceSFXes.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: f930a951e1aa9b249a4354c3dd7f3e62, type: 3}
+    - target: {fileID: 1237155294, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+      propertyPath: _bounceSFXes.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: cc6a7fe403e912240b7e2b6ecc2446d3, type: 3}
     - target: {fileID: 5765863275786032965, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5765863275786032988, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
+      propertyPath: _playerAudioManager
+      value: 
+      objectReference: {fileID: 353604572}
     - target: {fileID: 5765863275786032989, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
       propertyPath: _playerAudioManager
       value: 
@@ -1219,7 +1299,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 38010ca2c9b91eb4497be3987296d857, type: 3}
     - target: {fileID: 5765863275786032990, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5765863275786032991, guid: 27271a5e08d8e7d4a8b3fe5b74edefb9, type: 3}
       propertyPath: m_RootOrder
@@ -1462,7 +1542,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_Sprite: {fileID: 21300000, guid: 7cc21a41a0415f84fbba9195fba876d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1484,7 +1564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1032139506}
   - component: {fileID: 1032139507}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1546,7 +1626,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 20bcc6f95481e1f44b74f8a1ce11da73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1657,7 +1737,7 @@ MonoBehaviour:
   _playersInputs:
   - {fileID: 855851943}
   - {fileID: 529860510}
-  _enableDebug: 0
+  _enableDebug: 1
 --- !u!4 &1173516553
 Transform:
   m_ObjectHideFlags: 0

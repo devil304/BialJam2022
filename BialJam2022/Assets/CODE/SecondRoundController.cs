@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class SecondRoundController : MonoBehaviour
@@ -22,8 +21,8 @@ public class SecondRoundController : MonoBehaviour
     [SerializeField] private float winerCollisionRadius;
     [SerializeField] private float loserCollisionRadius;
 
-    [SerializeField] private AnimatorController winnerController;
-    [SerializeField] private AnimatorController loserController;
+    [SerializeField] private RuntimeAnimatorController winnerController;
+    [SerializeField] private RuntimeAnimatorController loserController;
 
     public PlayerInfo Player1 => player1;
     public PlayerInfo Player2 => player2;
