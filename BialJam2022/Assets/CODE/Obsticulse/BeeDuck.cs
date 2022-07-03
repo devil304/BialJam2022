@@ -18,6 +18,7 @@ public class BeeDuck : MonoBehaviour
 
     private Vector2 _randomDestination;
     private List<Vector2> _posHis;
+    bool _coolDown = false;
     Tween _tween;
 
     void Start()
@@ -56,8 +57,11 @@ public class BeeDuck : MonoBehaviour
 
     private void HitPlayer(Transform player)
     {
+        if(_coolDown) return;
+        _coolDown = true;
         player.GetComponent<Follow>().RemoveChickens(2);
         player.GetComponent<AnimationController>().LostDuck();
+        DOVirtual.DelayedCall(0.5f,()=>_coolDown=false);
     }
 
     private Vector2 GetRandomPosition()
@@ -74,7 +78,7 @@ public class BeeDuck : MonoBehaviour
     private void FlipSprite()
     {
         if(_posHis.Count < 2) return;
-        Debug.Log((_posHis[0] - _posHis[1]).x);
+        //Debug.Log((_posHis[0] - _posHis[1]).x);
         if((_posHis[0] - _posHis[1]).x > 0)
         {
             collision.transform.localScale = Vector3.one;

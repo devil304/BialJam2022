@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -58,13 +59,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    Vector2 _lastVel;
-
     void Update()
     {
         
         PerformInAirAction();
-        //if
 
         //PerformInWaterAction();
 

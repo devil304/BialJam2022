@@ -71,8 +71,8 @@ TextureImporter:
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
+    textureCompression: 2
+    compressionQuality: 0
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
@@ -191,10 +191,9 @@ TextureImporter:
       - {x: 1232, y: 261}
       - {x: 1137, y: 261}
       - {x: 1136, y: 262}
-      - {x: 469, y: 262}
       - {x: 473, y: 264}
-      - {x: 472, y: 268}
-      - {x: 442, y: 268}
+      - {x: 469, y: 266}
+      - {x: 443, y: 267}
       - {x: 438, y: 267}
       - {x: 306, y: 267}
       - {x: 305, y: 268}
@@ -222,14 +221,6 @@ TextureImporter:
       - {x: -20, y: 276}
       - {x: -26, y: 269}
       - {x: -25, y: 266}
-      - {x: 73, y: 266}
-      - {x: 73, y: 264}
-      - {x: 114, y: 265}
-      - {x: 115, y: 264}
-      - {x: 139, y: 264}
-      - {x: 141, y: 263}
-      - {x: 119, y: 263}
-      - {x: 117, y: 262}
       - {x: -27, y: 262}
       - {x: -30, y: 259}
       - {x: -30, y: 254}
@@ -582,14 +573,6 @@ TextureImporter:
       - {x: 994, y: -499}
       - {x: 1005, y: -497}
       - {x: 1013, y: -496}
-    - - {x: 169, y: 261}
-      - {x: 170, y: 262}
-      - {x: 180, y: 262}
-      - {x: 182, y: 263}
-      - {x: 183, y: 262}
-      - {x: 215, y: 262}
-      - {x: 165, y: 262}
-      - {x: 166, y: 261}
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 1537655665
