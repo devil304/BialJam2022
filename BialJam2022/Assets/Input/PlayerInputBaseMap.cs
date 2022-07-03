@@ -149,6 +149,15 @@ public partial class @PlayerInputBaseMap : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TutorialBack"",
+                    ""type"": ""Button"",
+                    ""id"": ""b54f1e5b-9aaf-4087-8017-ce056e7f730b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -160,6 +169,17 @@ public partial class @PlayerInputBaseMap : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""GamePadXbox"",
                     ""action"": ""Menu_Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""93916734-ca8d-48ef-bac6-268a553fa9c2"",
+                    ""path"": ""<XInputController>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TutorialBack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -187,6 +207,7 @@ public partial class @PlayerInputBaseMap : IInputActionCollection2, IDisposable
         // Misc
         m_Misc = asset.FindActionMap("Misc", throwIfNotFound: true);
         m_Misc_Menu_Pause = m_Misc.FindAction("Menu_Pause", throwIfNotFound: true);
+        m_Misc_TutorialBack = m_Misc.FindAction("TutorialBack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -288,11 +309,13 @@ public partial class @PlayerInputBaseMap : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Misc;
     private IMiscActions m_MiscActionsCallbackInterface;
     private readonly InputAction m_Misc_Menu_Pause;
+    private readonly InputAction m_Misc_TutorialBack;
     public struct MiscActions
     {
         private @PlayerInputBaseMap m_Wrapper;
         public MiscActions(@PlayerInputBaseMap wrapper) { m_Wrapper = wrapper; }
         public InputAction @Menu_Pause => m_Wrapper.m_Misc_Menu_Pause;
+        public InputAction @TutorialBack => m_Wrapper.m_Misc_TutorialBack;
         public InputActionMap Get() { return m_Wrapper.m_Misc; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -305,6 +328,9 @@ public partial class @PlayerInputBaseMap : IInputActionCollection2, IDisposable
                 @Menu_Pause.started -= m_Wrapper.m_MiscActionsCallbackInterface.OnMenu_Pause;
                 @Menu_Pause.performed -= m_Wrapper.m_MiscActionsCallbackInterface.OnMenu_Pause;
                 @Menu_Pause.canceled -= m_Wrapper.m_MiscActionsCallbackInterface.OnMenu_Pause;
+                @TutorialBack.started -= m_Wrapper.m_MiscActionsCallbackInterface.OnTutorialBack;
+                @TutorialBack.performed -= m_Wrapper.m_MiscActionsCallbackInterface.OnTutorialBack;
+                @TutorialBack.canceled -= m_Wrapper.m_MiscActionsCallbackInterface.OnTutorialBack;
             }
             m_Wrapper.m_MiscActionsCallbackInterface = instance;
             if (instance != null)
@@ -312,6 +338,9 @@ public partial class @PlayerInputBaseMap : IInputActionCollection2, IDisposable
                 @Menu_Pause.started += instance.OnMenu_Pause;
                 @Menu_Pause.performed += instance.OnMenu_Pause;
                 @Menu_Pause.canceled += instance.OnMenu_Pause;
+                @TutorialBack.started += instance.OnTutorialBack;
+                @TutorialBack.performed += instance.OnTutorialBack;
+                @TutorialBack.canceled += instance.OnTutorialBack;
             }
         }
     }
@@ -333,5 +362,6 @@ public partial class @PlayerInputBaseMap : IInputActionCollection2, IDisposable
     public interface IMiscActions
     {
         void OnMenu_Pause(InputAction.CallbackContext context);
+        void OnTutorialBack(InputAction.CallbackContext context);
     }
 }

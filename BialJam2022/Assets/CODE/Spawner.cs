@@ -53,7 +53,7 @@ public class Spawner : MonoBehaviour
         for (var i = 0; i < ducks.Count; i++)
         {
             if(Vector2.Distance(newRandomPoint, ducks[i].transform.position) < minimuDistance &&
-                Physics2D.OverlapCircle(newRandomPoint, 1f,platformMask))
+                Physics2D.OverlapCircle(newRandomPoint, 3f,platformMask))
             {
                 return GetRandomPoint();
             }

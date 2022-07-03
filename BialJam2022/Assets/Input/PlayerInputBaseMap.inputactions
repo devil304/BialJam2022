@@ -127,6 +127,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "TutorialBack",
+                    "type": "Button",
+                    "id": "b54f1e5b-9aaf-4087-8017-ce056e7f730b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -138,6 +147,17 @@
                     "processors": "",
                     "groups": "GamePadXbox",
                     "action": "Menu_Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "93916734-ca8d-48ef-bac6-268a553fa9c2",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TutorialBack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuHandler : MonoBehaviour
 {
     [SerializeField] private GameObject tutorialScreen;
     [SerializeField] private GameObject tutorialScreenSecond;
+
+    [SerializeField] private Button[] buttons;
 
     public void StartGame(){
         SceneManager.LoadScene(1);
@@ -15,6 +18,10 @@ public class MenuHandler : MonoBehaviour
     public void ShowTutorial()
     {
         tutorialScreen.SetActive(true);
+        for (var i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].enabled = false;
+        }
     }
 
     public void NextTutorialPage()
@@ -35,7 +42,12 @@ public class MenuHandler : MonoBehaviour
     {
         tutorialScreen.SetActive(false);
         tutorialScreenSecond.SetActive(false);
+        for (var i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].enabled = true;
+        }
     }
+
     public void Exit(){
         Application.Quit();
     }
