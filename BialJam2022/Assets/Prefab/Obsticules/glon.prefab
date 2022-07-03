@@ -165,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sfxLoopClip: {fileID: 8300000, guid: f1dc7b38c6bdb2c4fbd5677d61a204f4, type: 3}
   _minDist: 1
-  _maxDist: 10
+  _maxDist: 8
   _louder: 0
 --- !u!1 &8057326295032105507
 GameObject:
