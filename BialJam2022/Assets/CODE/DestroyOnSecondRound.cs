@@ -16,7 +16,7 @@ public class DestroyOnSecondRound : MonoBehaviour
 
     private void sceneChanged(Scene curr, Scene next)
     {
-        if(next.buildIndex>1)
+        if(next.buildIndex!=1)
             Destroy(gameObject);
     }
 }

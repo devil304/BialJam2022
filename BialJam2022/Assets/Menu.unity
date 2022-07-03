@@ -1573,7 +1573,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4513bf4919c465e4fb4a0b64448f0434, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.15
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1941,6 +1941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialScreen: {fileID: 625910217}
   tutorialScreenSecond: {fileID: 83403968}
+  buttons: []
 --- !u!1 &1029382550
 GameObject:
   m_ObjectHideFlags: 0
@@ -3883,10 +3884,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1315512376}
   - {fileID: 463246471}
   - {fileID: 625910220}
   - {fileID: 83403969}
-  - {fileID: 1315512376}
   m_Father: {fileID: 1109999321}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
