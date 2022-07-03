@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private CircleCollider2D _collider;
     private bool _isGrounded,  _canStomp;
     
+    
 
     public void SetMovement(MoveParametr parametr)
     {
@@ -57,10 +58,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    Vector2 _lastVel;
+
     void Update()
     {
         
         PerformInAirAction();
+        //if
 
         //PerformInWaterAction();
 
